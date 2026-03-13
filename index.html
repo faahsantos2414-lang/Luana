@@ -1,33 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Page for Luana</title>
-</head>
-<body>
-    <h1>Welcome to Luana's Love Page!</h1>
-    <div>
-        <h2>Heart Counter</h2>
-        <p id="heart-counter">❤️</p>
-        <button onclick="incrementCounter()">Add a Heart</button>
-    </div>
-    <div>
-        <h2>Gallery</h2>
-        <img src="your-image-url.jpg" alt="A beautiful memory" />
-        <img src="your-image-url2.jpg" alt="Another beautiful memory" />
-    </div>
-    <div>
-        <h2>Music</h2>
-        <p>Check out this love song: <a href="your-music-link.com">Click here</a></p>
-    </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luana ❤️</title>
 
-    <script>
-        let count = 1;
-        function incrementCounter() {
-            count++;
-            document.getElementById('heart-counter').innerText = '❤️'.repeat(count);
-        }
-    </script>
+<style>
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+margin:0;
+background:#fafafa;
+color:#333;
+display:flex;
+justify-content:center;
+}
+
+.container{
+max-width:900px;
+padding:40px 20px;
+text-align:center;
+}
+
+h1{
+font-weight:300;
+font-size:38px;
+margin-bottom:10px;
+}
+
+.frase{
+font-size:20px;
+margin-bottom:30px;
+color:#555;
+}
+
+.heart{
+font-size:28px;
+margin:15px 0 30px 0;
+}
+
+.contador{
+font-size:18px;
+margin-bottom:40px;
+color:#666;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+border-radius:14px;
+object-fit:cover;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.musica{
+margin-top:50px;
+font-size:16px;
+}
+
+footer{
+margin-top:60px;
+font-size:13px;
+color:#888;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Luana</h1>
+
+<div class="frase">Eu amo você menina</div>
+
+<div class="heart">❤️</div>
+
+<div class="contador" id="contador"></div>
+
+<div class="gallery">
+<img src="data:image/jpeg;base64,ED0" id="img1">
+<img src="data:image/jpeg;base64,AF6" id="img2">
+<img src="data:image/jpeg;base64,9EC" id="img3">
+<img src="data:image/jpeg;base64,320" id="img4">
+<img src="data:image/jpeg;base64,08A" id="img5">
+</div>
+
+<div class="musica">
+🎵 Música: Eu amo você menina — Tim Maia
+<br><br>
+<a href="https://www.youtube.com/results?search_query=eu+amo+você+menina+tim+maia" target="_blank">Clique aqui para ouvir a música</a>
+</div>
+
+<footer>
+Nosso cantinho desde 13/06/2025
+</footer>
+
+</div>
+
+<script>
+
+const dataInicio = new Date("2025-06-13");
+
+function atualizarContador(){
+
+const hoje = new Date();
+
+const diff = hoje - dataInicio;
+
+const dias = Math.floor(diff / (1000*60*60*24));
+
+const anos = Math.floor(dias/365);
+
+const diasRestantes = dias % 365;
+
+let texto = "";
+
+if(anos>0){
+texto += anos + " ano" + (anos>1?"s":"") + " e ";
+}
+
+texto += diasRestantes + " dias juntos ❤️";
+
+
+document.getElementById("contador").innerText = texto;
+}
+
+atualizarContador();
+
+</script>
+
 </body>
 </html>
