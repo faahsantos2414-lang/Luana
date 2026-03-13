@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Page for Luana</title>
+</head>
+<body>
+    <h1>Welcome to Luana's Love Page!</h1>
+    <div>
+        <h2>Heart Counter</h2>
+        <p id="heart-counter">❤️</p>
+        <button onclick="incrementCounter()">Add a Heart</button>
+    </div>
+    <div>
+        <h2>Gallery</h2>
+        <img src="your-image-url.jpg" alt="A beautiful memory" />
+        <img src="your-image-url2.jpg" alt="Another beautiful memory" />
+    </div>
+    <div>
+        <h2>Music</h2>
+        <p>Check out this love song: <a href="your-music-link.com">Click here</a></p>
+    </div>
+
+    <script>
+        let count = 1;
+        function incrementCounter() {
+            count++;
+            document.getElementById('heart-counter').innerText = '❤️'.repeat(count);
+        }
+    </script>
+</body>
+</html>
